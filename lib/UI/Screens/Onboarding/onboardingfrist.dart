@@ -1,8 +1,16 @@
+import 'dart:async';
+
+import 'package:fashion_valley/UI/Screens/Onboarding/onboardingtwo.dart';
 import 'package:flutter/material.dart';
 
-class OnboardOnde extends StatelessWidget {
+class OnboardOnde extends StatefulWidget {
   const OnboardOnde({super.key});
 
+  @override
+  State<OnboardOnde> createState() => _OnboardOndeState();
+}
+
+class _OnboardOndeState extends State<OnboardOnde> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,44 +38,56 @@ class OnboardOnde extends StatelessWidget {
               ),
               color: Colors.white,
             ),
-            Container(
-              height: MediaQuery.of(context).size.height / 17,
-              width: MediaQuery.of(context).size.width / 1.2,
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 255, 255, 255),
-                borderRadius: BorderRadius.circular(25),
-                border: Border.all(
-                  width: 2,
+            InkWell(
+              onTap: () {},
+              child: Container(
+                height: MediaQuery.of(context).size.height / 17,
+                width: MediaQuery.of(context).size.width / 1.2,
+                decoration: BoxDecoration(
                   color: const Color.fromARGB(255, 255, 255, 255),
+                  borderRadius: BorderRadius.circular(25),
+                  border: Border.all(
+                    width: 2,
+                    color: const Color.fromARGB(255, 255, 255, 255),
+                  ),
                 ),
+                child: const Center(
+                    child: Text(
+                  "Sign in",
+                  style: TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.bold),
+                )),
               ),
-              child: const Center(
-                  child: Text(
-                "Sign in",
-                style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-              )),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height / 30,
             ),
-            Container(
-              height: MediaQuery.of(context).size.height / 17,
-              width: MediaQuery.of(context).size.width / 1.2,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25),
-                border: Border.all(
-                  width: 2,
-                  color: const Color.fromARGB(255, 255, 255, 255),
+            InkWell(
+              onTap: () {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const OnboardingTwo(),
+                    ));
+              },
+              child: Container(
+                height: MediaQuery.of(context).size.height / 17,
+                width: MediaQuery.of(context).size.width / 1.2,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                  border: Border.all(
+                    width: 2,
+                    color: const Color.fromARGB(255, 255, 255, 255),
+                  ),
                 ),
+                child: const Center(
+                    child: Text(
+                  "Sign up",
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 255, 255, 255),
+                      fontWeight: FontWeight.bold),
+                )),
               ),
-              child: const Center(
-                  child: Text(
-                "Sign up",
-                style: TextStyle(
-                    color: Color.fromARGB(255, 255, 255, 255),
-                    fontWeight: FontWeight.bold),
-              )),
             )
           ],
         )),
