@@ -12,6 +12,22 @@ class OnboardOnde extends StatefulWidget {
 
 class _OnboardOndeState extends State<OnboardOnde> {
   @override
+  void initState() {
+    super.initState();
+    Timer(
+      const Duration(seconds: 7),
+      (() {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const OnboardingTwo(),
+          ),
+        );
+      }),
+    );
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
@@ -39,7 +55,14 @@ class _OnboardOndeState extends State<OnboardOnde> {
               color: Colors.white,
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const OnboardingTwo(),
+                  ),
+                );
+              },
               child: Container(
                 height: MediaQuery.of(context).size.height / 17,
                 width: MediaQuery.of(context).size.width / 1.2,
@@ -65,10 +88,11 @@ class _OnboardOndeState extends State<OnboardOnde> {
             InkWell(
               onTap: () {
                 Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const OnboardingTwo(),
-                    ));
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const OnboardingTwo(),
+                  ),
+                );
               },
               child: Container(
                 height: MediaQuery.of(context).size.height / 17,

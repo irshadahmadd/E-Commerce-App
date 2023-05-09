@@ -1,31 +1,24 @@
 import 'dart:async';
 
-import 'package:fashion_valley/UI/Screens/Onboarding/onboardingthee.dart';
+import 'package:fashion_valley/UI/Screens/AuthScreens/signin_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-class OnboardingTwo extends StatefulWidget {
-  const OnboardingTwo({super.key});
+class OnboardingFour extends StatefulWidget {
+  const OnboardingFour({super.key});
 
   @override
-  State<OnboardingTwo> createState() => _OnboardingTwoState();
+  State<OnboardingFour> createState() => _OnboardingFourState();
 }
 
-class _OnboardingTwoState extends State<OnboardingTwo> {
+class _OnboardingFourState extends State<OnboardingFour> {
   @override
   void initState() {
     super.initState();
-    Timer(
-      const Duration(seconds: 7),
-      (() {
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const OnboardingThree(),
-          ),
-        );
-      }),
-    );
+    Timer(const Duration(seconds: 5), (() {
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (context) => const SigninScreen()));
+    }));
   }
 
   @override
@@ -45,7 +38,7 @@ class _OnboardingTwoState extends State<OnboardingTwo> {
                 borderRadius: BorderRadius.circular(10),
                 image: const DecorationImage(
                   image: AssetImage(
-                    "assets/model3.jpg",
+                    "assets/model2.jpg",
                   ),
                   fit: BoxFit.cover,
                 ),
@@ -57,9 +50,9 @@ class _OnboardingTwoState extends State<OnboardingTwo> {
           ),
           Padding(
             padding:
-                EdgeInsets.only(right: MediaQuery.of(context).size.width / 3.5),
+                EdgeInsets.only(right: MediaQuery.of(context).size.width / 2.7),
             child: const Text(
-              "Take Advantage\nOf the Offer Shopping",
+              "All types Offer\nWithen your Reach",
               style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,

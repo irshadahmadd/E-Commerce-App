@@ -1,17 +1,17 @@
 import 'dart:async';
 
-import 'package:fashion_valley/UI/Screens/Onboarding/onboardingthee.dart';
+import 'package:fashion_valley/UI/Screens/Onboarding/onboardingfour.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-class OnboardingTwo extends StatefulWidget {
-  const OnboardingTwo({super.key});
+class OnboardingThree extends StatefulWidget {
+  const OnboardingThree({super.key});
 
   @override
-  State<OnboardingTwo> createState() => _OnboardingTwoState();
+  State<OnboardingThree> createState() => _OnboardingThreeState();
 }
 
-class _OnboardingTwoState extends State<OnboardingTwo> {
+class _OnboardingThreeState extends State<OnboardingThree> {
   @override
   void initState() {
     super.initState();
@@ -21,7 +21,7 @@ class _OnboardingTwoState extends State<OnboardingTwo> {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => const OnboardingThree(),
+            builder: (context) => const OnboardingFour(),
           ),
         );
       }),
@@ -45,7 +45,7 @@ class _OnboardingTwoState extends State<OnboardingTwo> {
                 borderRadius: BorderRadius.circular(10),
                 image: const DecorationImage(
                   image: AssetImage(
-                    "assets/model3.jpg",
+                    "assets/model4.jpg",
                   ),
                   fit: BoxFit.cover,
                 ),
@@ -59,7 +59,7 @@ class _OnboardingTwoState extends State<OnboardingTwo> {
             padding:
                 EdgeInsets.only(right: MediaQuery.of(context).size.width / 3.5),
             child: const Text(
-              "Take Advantage\nOf the Offer Shopping",
+              "20% Discount\nNew Arrival Products",
               style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
