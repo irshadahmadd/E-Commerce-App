@@ -1,17 +1,16 @@
 import 'package:fashion_valley/Core/Constants/decoration.dart';
 import 'package:fashion_valley/Core/Providers/sign_provider.dart';
 import 'package:fashion_valley/UI/Custom_widgets/button.dart';
-import 'package:fashion_valley/UI/Screens/AuthScreens/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class SigninScreen extends StatefulWidget {
-  const SigninScreen({super.key});
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({super.key});
   @override
-  State<SigninScreen> createState() => _SigninScreenState();
+  State<SignupScreen> createState() => _SignupScreenState();
 }
 
-class _SigninScreenState extends State<SigninScreen> {
+class _SignupScreenState extends State<SignupScreen> {
   TextEditingController emailContoller = TextEditingController();
   TextEditingController passwordContoller = TextEditingController();
   @override
@@ -37,7 +36,7 @@ class _SigninScreenState extends State<SigninScreen> {
                   color: Colors.black,
                 ),
                 const Text(
-                  "Welcome",
+                  "Sign Up",
                   style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
@@ -47,7 +46,7 @@ class _SigninScreenState extends State<SigninScreen> {
                   height: MediaQuery.of(context).size.height / 80,
                 ),
                 const Text(
-                  "Please login or sign up to contineue our app",
+                  "Create a new account to sign up",
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 15,
@@ -55,6 +54,30 @@ class _SigninScreenState extends State<SigninScreen> {
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 40,
+                ),
+                const Text(
+                  "Username",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 80,
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width / 1.1,
+                  height: MediaQuery.of(context).size.height / 10,
+                  child: TextFormField(
+                    controller: emailContoller,
+                    decoration: kTextfieldDecoration.copyWith(
+                      hintText: "Enter username",
+                      suffixIcon: const Icon(
+                        Icons.person,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
                 ),
                 const Text(
                   "Email",
@@ -121,44 +144,13 @@ class _SigninScreenState extends State<SigninScreen> {
                         MaterialPageRoute(
                             builder: (context) => const SignupScreen()));
                   }),
-                  title: "Login",
+                  title: "Sign Up",
                   titleColor: Colors.white,
                   buttonCollor: Colors.black,
                   iccon: const Icon(
                     Icons.face_outlined,
                     size: 0,
                     color: Color.fromARGB(255, 0, 0, 0),
-                  ),
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height / 80,
-                ),
-                const Center(
-                  child: Text(
-                    "or ",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height / 80,
-                ),
-                Button(
-                  ontap: (() {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const SignupScreen()));
-                  }),
-                  title: "Contineue with google",
-                  titleColor: Colors.white,
-                  buttonCollor: const Color.fromARGB(255, 58, 52, 52),
-                  iccon: const Icon(
-                    Icons.g_mobiledata,
-                    size: 0,
-                    color: Color.fromARGB(255, 255, 255, 255),
                   ),
                 ),
               ],
