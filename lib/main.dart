@@ -1,3 +1,4 @@
+import 'package:fashion_valley/Core/Providers/catagories_selection_provider.dart';
 import 'package:fashion_valley/Core/Providers/sign_provider.dart';
 import 'package:fashion_valley/Core/Services/splash_services.dart';
 import 'package:flutter/material.dart';
@@ -15,9 +16,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider<SigninProvider>(
-          create: (_) => SigninProvider(),
-        ),
+        ChangeNotifierProvider<SigninProvider>(create: (_) => SigninProvider()),
+        ChangeNotifierProvider(create: (_) => CatagorySelectionProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
