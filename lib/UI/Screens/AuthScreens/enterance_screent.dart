@@ -1,5 +1,5 @@
 import 'package:fashion_valley/UI/Custom_widgets/button.dart';
-import 'package:fashion_valley/UI/Screens/AuthScreens/signup_screen.dart';
+import 'package:fashion_valley/UI/Screens/TabbarMain/main_tabbar_screen.dart';
 import 'package:flutter/material.dart';
 
 class EntranceScreen extends StatelessWidget {
@@ -15,7 +15,7 @@ class EntranceScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(
-              height: MediaQuery.of(context).size.height / 10,
+              height: MediaQuery.of(context).size.height / 7,
             ),
             const Image(
               image: AssetImage("assets/correct.png"),
@@ -31,7 +31,7 @@ class EntranceScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height / 10,
+              height: MediaQuery.of(context).size.height / 30,
             ),
             const Text(
               "Welcome you have successfully \n register now you can\n contineue to",
@@ -42,7 +42,7 @@ class EntranceScreen extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height / 10,
+              height: MediaQuery.of(context).size.height / 3,
             ),
             Button(
                 iccon: const Icon(
@@ -57,7 +57,7 @@ class EntranceScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     (MaterialPageRoute(
-                      builder: (context) => const SignupScreen(),
+                      builder: (context) => const TabbarMainScreen(),
                     )),
                   );
                 }),
