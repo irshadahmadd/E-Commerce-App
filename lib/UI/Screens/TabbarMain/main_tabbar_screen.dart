@@ -51,7 +51,7 @@ class _TabbarMainScreenState extends State<TabbarMainScreen> {
                   icon: CircleAvatar(
                       radius: MediaQuery.of(context).size.width / 5,
                       backgroundColor: Colors.white,
-                      child: const Icon(Icons.shop_2_outlined,
+                      child: const Icon(Icons.shopping_cart_checkout_sharp,
                           color: Colors.black)),
                 ),
                 Tab(

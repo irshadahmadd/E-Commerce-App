@@ -16,7 +16,7 @@ class _OnboardingTwoState extends State<OnboardingTwo> {
   void initState() {
     super.initState();
     Timer(
-      const Duration(seconds: 7),
+      const Duration(seconds: 3),
       (() {
         Navigator.pushReplacement(
           context,

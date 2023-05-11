@@ -6,7 +6,7 @@ class Notific extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amberAccent,
+      backgroundColor: Color.fromARGB(255, 0, 136, 255),
     );
   }
 }
