@@ -1,6 +1,7 @@
 import 'package:fashion_valley/Core/Constants/decoration.dart';
 import 'package:fashion_valley/Core/Providers/sign_provider.dart';
 import 'package:fashion_valley/UI/Custom_widgets/button.dart';
+import 'package:fashion_valley/UI/Screens/AuthScreens/enterance_screent.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -142,7 +143,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const SignupScreen()));
+                            builder: (context) => const EntranceScreen()));
                   }),
                   title: "Sign Up",
                   titleColor: Colors.white,
