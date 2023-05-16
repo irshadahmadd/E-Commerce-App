@@ -1,5 +1,4 @@
 // ignore_for_file: prefer_const_constructors
-
 import 'package:fashion_valley/Core/Providers/catagories_selection_provider.dart';
 import 'package:fashion_valley/UI/Screens/Cart/cart.dart';
 import 'package:fashion_valley/UI/Screens/Home/Products/bags.dart';
@@ -56,7 +55,9 @@ class _TabbarMainScreenState extends State<TabbarMainScreen> {
           decoration: BoxDecoration(
             color: Colors.black,
             borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(20), topRight: Radius.circular(20)),
+              topLeft: Radius.circular(20),
+              topRight: Radius.circular(20),
+            ),
             border: Border.all(
               width: 1,
               color: Theme.of(context).backgroundColor.withOpacity(0.1),
@@ -74,10 +75,11 @@ class _TabbarMainScreenState extends State<TabbarMainScreen> {
               ),
               Tab(
                 icon: CircleAvatar(
-                    radius: MediaQuery.of(context).size.width / 5,
-                    backgroundColor: Colors.white,
-                    child: const Icon(Icons.shopping_cart_checkout_sharp,
-                        color: Colors.black)),
+                  radius: MediaQuery.of(context).size.width / 5,
+                  backgroundColor: Colors.white,
+                  child: const Icon(Icons.shopping_cart_checkout_sharp,
+                      color: Colors.black),
+                ),
               ),
               Tab(
                 icon: CircleAvatar(

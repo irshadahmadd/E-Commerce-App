@@ -12,7 +12,7 @@ class Cloths extends StatelessWidget {
         backgroundColor: Colors.white,
         body: Padding(
           padding: EdgeInsets.symmetric(
-              horizontal: MediaQuery.of(context).size.width / 20),
+              horizontal: MediaQuery.of(context).size.width / 30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
