@@ -42,8 +42,11 @@ class Bags extends StatelessWidget {
                       fontSize: 22,
                       fontWeight: FontWeight.bold),
                 ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 50,
+                ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Column(
                       children: [
@@ -171,7 +174,7 @@ class Bags extends StatelessWidget {
                   height: MediaQuery.of(context).size.height / 50,
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Column(
                       children: [
@@ -288,8 +291,11 @@ class Bags extends StatelessWidget {
                     ),
                   ],
                 ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 50,
+                ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Column(
                       children: [
@@ -417,7 +423,7 @@ class Bags extends StatelessWidget {
                   height: MediaQuery.of(context).size.height / 50,
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Column(
                       children: [
@@ -533,6 +539,9 @@ class Bags extends StatelessWidget {
                       ],
                     ),
                   ],
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 8,
                 ),
               ],
             ),

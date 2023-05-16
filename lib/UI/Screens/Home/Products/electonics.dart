@@ -13,35 +13,518 @@ class Electronics extends StatelessWidget {
         body: Padding(
           padding: EdgeInsets.symmetric(
               horizontal: MediaQuery.of(context).size.width / 30),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 12,
-              ),
-              InkWell(
-                onTap: (() {
-                  catagprovider.showElectronics(0);
-                }),
-                child: const CircleAvatar(
-                  backgroundColor: Colors.black,
-                  child: Icon(
-                    Icons.arrow_back_rounded,
-                    color: Colors.white,
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 12,
+                ),
+                InkWell(
+                  onTap: (() {
+                    catagprovider.showElectronics(0);
+                  }),
+                  child: const CircleAvatar(
+                    backgroundColor: Colors.black,
+                    child: Icon(
+                      Icons.arrow_back_rounded,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 50,
-              ),
-              const Text(
-                "Electronics",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold),
-              ),
-            ],
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 50,
+                ),
+                const Text(
+                  "Electronics",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 50,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          height: MediaQuery.of(context).size.height / 5,
+                          width: MediaQuery.of(context).size.width / 2.5,
+                          decoration: BoxDecoration(
+                            color: const Color(0xfff6f6f6),
+                            borderRadius: BorderRadius.circular(15),
+                            image: const DecorationImage(
+                                image: AssetImage(
+                                  "assets/electronics1.jpg",
+                                ),
+                                fit: BoxFit.cover),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.3),
+                                spreadRadius: 5,
+                                blurRadius: 10,
+                                offset: const Offset(
+                                    0, 3), // changes position of shadow
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 100,
+                        ),
+                        const Text(
+                          "The top camera",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 200,
+                        ),
+                        const Text(
+                          "smart products",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 36, 36, 36),
+                            fontSize: 12,
+                          ),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 200,
+                        ),
+                        const Text(
+                          "\$ 189.00",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Container(
+                          height: MediaQuery.of(context).size.height / 5,
+                          width: MediaQuery.of(context).size.width / 2.5,
+                          decoration: BoxDecoration(
+                            color: const Color(0xfff6f6f6),
+                            borderRadius: BorderRadius.circular(15),
+                            image: const DecorationImage(
+                                image: AssetImage(
+                                  "assets/electronics2.jpg",
+                                ),
+                                fit: BoxFit.cover),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.3),
+                                spreadRadius: 5,
+                                blurRadius: 10,
+                                offset: const Offset(
+                                    0, 3), // changes position of shadow
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 100,
+                        ),
+                        const Text(
+                          "Ear Pods notch ",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 200,
+                        ),
+                        const Text(
+                          "real pods",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 36, 36, 36),
+                            fontSize: 12,
+                          ),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 200,
+                        ),
+                        const Text(
+                          "\$ 230.00",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 50,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          height: MediaQuery.of(context).size.height / 5,
+                          width: MediaQuery.of(context).size.width / 2.5,
+                          decoration: BoxDecoration(
+                            color: const Color(0xfff6f6f6),
+                            borderRadius: BorderRadius.circular(15),
+                            image: const DecorationImage(
+                                image: AssetImage(
+                                  "assets/electronics3.jpg",
+                                ),
+                                fit: BoxFit.cover),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.3),
+                                spreadRadius: 5,
+                                blurRadius: 10,
+                                offset: const Offset(
+                                    0, 3), // changes position of shadow
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 100,
+                        ),
+                        const Text(
+                          "The ideal Speaker",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 200,
+                        ),
+                        const Text(
+                          "dissert fill",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 36, 36, 36),
+                            fontSize: 12,
+                          ),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 200,
+                        ),
+                        const Text(
+                          "\$ 123.00",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Container(
+                          height: MediaQuery.of(context).size.height / 5,
+                          width: MediaQuery.of(context).size.width / 2.5,
+                          decoration: BoxDecoration(
+                            color: const Color(0xfff6f6f6),
+                            borderRadius: BorderRadius.circular(10),
+                            image: const DecorationImage(
+                                image: AssetImage("assets/electronics4.jpg"),
+                                fit: BoxFit.cover),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.3),
+                                spreadRadius: 5,
+                                blurRadius: 10,
+                                offset: const Offset(
+                                    0, 3), // changes position of shadow
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 100,
+                        ),
+                        const Text(
+                          "fashion pods ",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 200,
+                        ),
+                        const Text(
+                          "Stage products",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 36, 36, 36),
+                            fontSize: 12,
+                          ),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 200,
+                        ),
+                        const Text(
+                          "\$ 321.00",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 50,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          height: MediaQuery.of(context).size.height / 5,
+                          width: MediaQuery.of(context).size.width / 2.5,
+                          decoration: BoxDecoration(
+                            color: const Color(0xfff6f6f6),
+                            borderRadius: BorderRadius.circular(15),
+                            image: const DecorationImage(
+                                image: AssetImage(
+                                  "assets/electronics5.jpg",
+                                ),
+                                fit: BoxFit.cover),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.3),
+                                spreadRadius: 5,
+                                blurRadius: 10,
+                                offset: const Offset(
+                                    0, 3), // changes position of shadow
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 100,
+                        ),
+                        const Text(
+                          "The top nighty",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 200,
+                        ),
+                        const Text(
+                          "mixa products",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 36, 36, 36),
+                            fontSize: 12,
+                          ),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 200,
+                        ),
+                        const Text(
+                          "\$ 189.00",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Container(
+                          height: MediaQuery.of(context).size.height / 5,
+                          width: MediaQuery.of(context).size.width / 2.5,
+                          decoration: BoxDecoration(
+                            color: const Color(0xfff6f6f6),
+                            borderRadius: BorderRadius.circular(15),
+                            image: const DecorationImage(
+                                image: AssetImage(
+                                  "assets/electronics6.jpg",
+                                ),
+                                fit: BoxFit.cover),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.3),
+                                spreadRadius: 5,
+                                blurRadius: 10,
+                                offset: const Offset(
+                                    0, 3), // changes position of shadow
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 100,
+                        ),
+                        const Text(
+                          "Beeds for smart ",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 200,
+                        ),
+                        const Text(
+                          "top notch",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 36, 36, 36),
+                            fontSize: 12,
+                          ),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 200,
+                        ),
+                        const Text(
+                          "\$ 230.00",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 50,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          height: MediaQuery.of(context).size.height / 5,
+                          width: MediaQuery.of(context).size.width / 2.5,
+                          decoration: BoxDecoration(
+                            color: const Color(0xfff6f6f6),
+                            borderRadius: BorderRadius.circular(15),
+                            image: const DecorationImage(
+                                image: AssetImage(
+                                  "assets/electronics7.jpg",
+                                ),
+                                fit: BoxFit.cover),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.3),
+                                spreadRadius: 5,
+                                blurRadius: 10,
+                                offset: const Offset(
+                                    0, 3), // changes position of shadow
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 100,
+                        ),
+                        const Text(
+                          "The mixy class",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 200,
+                        ),
+                        const Text(
+                          "Nighty fill",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 36, 36, 36),
+                            fontSize: 12,
+                          ),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 200,
+                        ),
+                        const Text(
+                          "\$ 123.00",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Container(
+                          height: MediaQuery.of(context).size.height / 5,
+                          width: MediaQuery.of(context).size.width / 2.5,
+                          decoration: BoxDecoration(
+                            color: const Color(0xfff6f6f6),
+                            borderRadius: BorderRadius.circular(10),
+                            image: const DecorationImage(
+                                image: AssetImage(
+                                  "assets/electronics8.jpg",
+                                ),
+                                fit: BoxFit.cover),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.3),
+                                spreadRadius: 5,
+                                blurRadius: 10,
+                                offset: const Offset(
+                                    0, 3), // changes position of shadow
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 100,
+                        ),
+                        const Text(
+                          "fashion scale ",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 200,
+                        ),
+                        const Text(
+                          "Good look",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 36, 36, 36),
+                            fontSize: 12,
+                          ),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 200,
+                        ),
+                        const Text(
+                          "\$ 321.00",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 8,
+                ),
+              ],
+            ),
           ),
         ),
       ),
