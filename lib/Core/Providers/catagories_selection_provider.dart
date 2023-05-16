@@ -17,21 +17,18 @@ class CatagorySelectionProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  bool shoes = false;
-  showShoes() {
-    shoes = !shoes;
+  showShoes(int sindex) {
+    index = sindex;
     notifyListeners();
   }
 
-  bool electronics = false;
-  showElectronics() {
-    electronics = !electronics;
+  showElectronics(int eindex) {
+    index = eindex;
     notifyListeners();
   }
 
-  bool jewellry = false;
-  showJewellery() {
-    jewellry = !jewellry;
+  showJewellery(int jindex) {
+    index = jindex;
     notifyListeners();
   }
 }

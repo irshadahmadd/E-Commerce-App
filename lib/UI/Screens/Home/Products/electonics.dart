@@ -21,7 +21,7 @@ class Electronics extends StatelessWidget {
               ),
               InkWell(
                 onTap: (() {
-                  catagprovider.showElectronics();
+                  catagprovider.showElectronics(0);
                 }),
                 child: const CircleAvatar(
                   backgroundColor: Colors.black,

@@ -21,7 +21,7 @@ class Jewellery extends StatelessWidget {
               ),
               InkWell(
                 onTap: (() {
-                  catagprovider.showJewellery();
+                  catagprovider.showJewellery(0);
                 }),
                 child: const CircleAvatar(
                   backgroundColor: Colors.black,

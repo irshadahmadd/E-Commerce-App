@@ -114,7 +114,7 @@ class Home extends StatelessWidget {
                 title: "Shoes",
                 product: "234 Products",
                 ontap: () {
-                  catagprovider.showShoes();
+                  catagprovider.showShoes(4);
                 },
               ),
               SizedBox(
@@ -128,7 +128,7 @@ class Home extends StatelessWidget {
                 title: "Electronins",
                 product: "567 Products",
                 ontap: () {
-                  catagprovider.showElectronics();
+                  catagprovider.showElectronics(5);
                 },
               ),
               SizedBox(
@@ -142,7 +142,7 @@ class Home extends StatelessWidget {
                 title: "Jewellery",
                 product: "567 Products",
                 ontap: () {
-                  catagprovider.showJewellery();
+                  catagprovider.showJewellery(6);
                 },
               ),
             ],
