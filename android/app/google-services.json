@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "493556179206",
+    "project_id": "fassion-valley",
+    "storage_bucket": "fassion-valley.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:493556179206:android:a0ab69c732e6fe71563e87",
+        "android_client_info": {
+          "package_name": "com.example.fashion_valley"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "493556179206-6k8v95cfjr3tk60hq5f5niajli50uraj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwvyyDIwMQWOTPD_0Gwpeme_Z-BexPx3Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "493556179206-6k8v95cfjr3tk60hq5f5niajli50uraj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

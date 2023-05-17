@@ -2,6 +2,8 @@ import 'package:fashion_valley/Core/Constants/decoration.dart';
 import 'package:fashion_valley/Core/Providers/sign_provider.dart';
 import 'package:fashion_valley/UI/Custom_widgets/button.dart';
 import 'package:fashion_valley/UI/Screens/AuthScreens/enterance_screent.dart';
+import 'package:fashion_valley/UI/Screens/AuthScreens/signin_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -12,8 +14,10 @@ class SignupScreen extends StatefulWidget {
 }
 
 class _SignupScreenState extends State<SignupScreen> {
+  TextEditingController usernameController = TextEditingController();
   TextEditingController emailContoller = TextEditingController();
   TextEditingController passwordContoller = TextEditingController();
+  FirebaseAuth auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Consumer<SigninProvider>(
@@ -70,7 +74,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   width: MediaQuery.of(context).size.width / 1.1,
                   height: MediaQuery.of(context).size.height / 10,
                   child: TextFormField(
-                    controller: emailContoller,
+                    controller: usernameController,
                     decoration: kTextfieldDecoration.copyWith(
                       hintText: "Enter username",
                       suffixIcon: const Icon(
@@ -139,11 +143,13 @@ class _SignupScreenState extends State<SignupScreen> {
                   height: MediaQuery.of(context).size.height / 80,
                 ),
                 Button(
-                  ontap: (() {
+                  ontap: (() async {
+                    signinprovider.createUser(
+                        emailContoller.text, passwordContoller.text);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const EntranceScreen()));
+                            builder: (context) => const SigninScreen()));
                   }),
                   title: "Sign Up",
                   titleColor: Colors.white,

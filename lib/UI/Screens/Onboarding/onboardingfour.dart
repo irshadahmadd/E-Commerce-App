@@ -1,6 +1,5 @@
 import 'dart:async';
-
-import 'package:fashion_valley/UI/Screens/AuthScreens/signin_screen.dart';
+import 'package:fashion_valley/UI/Screens/Onboarding/onboardingfrist.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -17,7 +16,7 @@ class _OnboardingFourState extends State<OnboardingFour> {
     super.initState();
     Timer(const Duration(seconds: 3), (() {
       Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => const SigninScreen()));
+          MaterialPageRoute(builder: (context) => const OnboardOnde()));
     }));
   }
 

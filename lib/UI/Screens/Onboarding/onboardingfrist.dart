@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:fashion_valley/UI/Screens/AuthScreens/signin_screen.dart';
+import 'package:fashion_valley/UI/Screens/AuthScreens/signup_screen.dart';
 import 'package:fashion_valley/UI/Screens/Onboarding/onboardingtwo.dart';
 import 'package:flutter/material.dart';
 
@@ -12,20 +14,20 @@ class OnboardOnde extends StatefulWidget {
 
 class _OnboardOndeState extends State<OnboardOnde> {
   @override
-  void initState() {
-    super.initState();
-    Timer(
-      const Duration(seconds: 3),
-      (() {
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const OnboardingTwo(),
-          ),
-        );
-      }),
-    );
-  }
+  // void initState() {
+  //   super.initState();
+  //   Timer(
+  //     const Duration(seconds: 3),
+  //     (() {
+  //       Navigator.pushReplacement(
+  //         context,
+  //         MaterialPageRoute(
+  //           builder: (context) => const OnboardingTwo(),
+  //         ),
+  //       );
+  //     }),
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +61,7 @@ class _OnboardOndeState extends State<OnboardOnde> {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const OnboardingTwo(),
+                    builder: (context) => const SigninScreen(),
                   ),
                 );
               },
@@ -90,7 +92,7 @@ class _OnboardOndeState extends State<OnboardOnde> {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const OnboardingTwo(),
+                    builder: (context) => const SignupScreen(),
                   ),
                 );
               },

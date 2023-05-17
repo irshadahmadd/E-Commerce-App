@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:fashion_valley/UI/Screens/Onboarding/onboardingfrist.dart';
+import 'package:fashion_valley/UI/Screens/Onboarding/onboardingtwo.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreenFrist extends StatefulWidget {
@@ -19,7 +20,7 @@ class _SplashScreenFristState extends State<SplashScreenFrist> {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => const OnboardOnde(),
+            builder: (context) => const OnboardingTwo(),
           ),
         );
       }),

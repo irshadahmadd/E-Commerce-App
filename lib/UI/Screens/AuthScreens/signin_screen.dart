@@ -1,6 +1,8 @@
 import 'package:fashion_valley/Core/Constants/decoration.dart';
 import 'package:fashion_valley/Core/Providers/sign_provider.dart';
+import 'package:fashion_valley/Core/utills/utills.dart';
 import 'package:fashion_valley/UI/Custom_widgets/button.dart';
+import 'package:fashion_valley/UI/Screens/AuthScreens/enterance_screent.dart';
 import 'package:fashion_valley/UI/Screens/AuthScreens/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -14,6 +16,7 @@ class SigninScreen extends StatefulWidget {
 class _SigninScreenState extends State<SigninScreen> {
   TextEditingController emailContoller = TextEditingController();
   TextEditingController passwordContoller = TextEditingController();
+  GlobalKey<FormState> formkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Consumer<SigninProvider>(
@@ -56,39 +59,53 @@ class _SigninScreenState extends State<SigninScreen> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 40,
                 ),
-                const Text(
-                  "Email",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height / 80,
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width / 1.1,
-                  height: MediaQuery.of(context).size.height / 10,
-                  child: TextFormField(
-                    controller: emailContoller,
-                    decoration: kTextfieldDecoration.copyWith(
-                      hintText: "Enter your email",
-                      suffixIcon: const Icon(
-                        Icons.email,
-                        color: Colors.black,
+                Form(
+                  key: formkey,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        "Email",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20),
                       ),
-                    ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height / 80,
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width / 1.1,
+                        height: MediaQuery.of(context).size.height / 10,
+                        child: TextFormField(
+                          controller: emailContoller,
+                          decoration: kTextfieldDecoration.copyWith(
+                            hintText: "Enter your email",
+                            suffixIcon: const Icon(
+                              Icons.email,
+                              color: Colors.black,
+                            ),
+                          ),
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return 'Enter Email';
+                            }
+                            return null;
+                          },
+                        ),
+                      ),
+                      const Text(
+                        "Password",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20),
+                      ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height / 80,
+                      ),
+                    ],
                   ),
-                ),
-                const Text(
-                  "Password",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height / 80,
                 ),
                 SizedBox(
                   width: MediaQuery.of(context).size.width / 1.1,
@@ -109,17 +126,48 @@ class _SigninScreenState extends State<SigninScreen> {
                             color: Colors.black),
                       ),
                     ),
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Enter password';
+                      }
+                      return null;
+                    },
                   ),
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 80,
                 ),
                 Button(
-                  ontap: (() {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const SignupScreen()));
+                  ontap: (() async {
+                    if (formkey.currentState!.validate()) {
+                      await auth
+                          .signInWithEmailAndPassword(
+                              email: emailContoller.text.trim(),
+                              password: passwordContoller.text.trim())
+                          .then(
+                            (value) => {
+                              Utilities().toastMessage(
+                                value.user!.email.toString(),
+                              ),
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const EntranceScreen(),
+                                ),
+                              ),
+                            },
+                          )
+                          .onError(
+                            (error, stackTrace) => {
+                              Utilities().toastMessage(
+                                error.toString(),
+                              ),
+                            },
+                          );
+
+                      // ignore: use_build_context_synchronously
+
+                    } else {}
                   }),
                   title: "Login",
                   titleColor: Colors.white,
@@ -146,12 +194,7 @@ class _SigninScreenState extends State<SigninScreen> {
                   height: MediaQuery.of(context).size.height / 80,
                 ),
                 Button(
-                  ontap: (() {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const SignupScreen()));
-                  }),
+                  ontap: (() {}),
                   title: "Contineue with google",
                   titleColor: Colors.white,
                   buttonCollor: const Color.fromARGB(255, 58, 52, 52),
