@@ -29,6 +29,13 @@
             {
               "client_id": "493556179206-6k8v95cfjr3tk60hq5f5niajli50uraj.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "493556179206-0sb0lbeenptm1bmknev84anp1hhpkg8b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fashionValley"
+              }
             }
           ]
         }

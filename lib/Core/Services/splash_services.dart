@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:fashion_valley/UI/Screens/Onboarding/onboardingfrist.dart';
 import 'package:fashion_valley/UI/Screens/Onboarding/onboardingtwo.dart';
 import 'package:flutter/material.dart';
 

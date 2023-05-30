@@ -1,8 +1,5 @@
-import 'dart:async';
-
-import 'package:fashion_valley/UI/Screens/AuthScreens/signin_screen.dart';
-import 'package:fashion_valley/UI/Screens/AuthScreens/signup_screen.dart';
-import 'package:fashion_valley/UI/Screens/Onboarding/onboardingtwo.dart';
+import 'package:fashion_valley/UI/Screens/auth_screens/signin_screen/signin_screen.dart';
+import 'package:fashion_valley/UI/Screens/auth_screens/signup_screen/signup_screen.dart';
 import 'package:flutter/material.dart';
 
 class OnboardOnde extends StatefulWidget {
@@ -61,7 +58,7 @@ class _OnboardOndeState extends State<OnboardOnde> {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const SigninScreen(),
+                    builder: (context) => const SignInScreen(),
                   ),
                 );
               },
@@ -92,7 +89,7 @@ class _OnboardOndeState extends State<OnboardOnde> {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const SignupScreen(),
+                    builder: (context) => const SignUpScreen(),
                   ),
                 );
               },

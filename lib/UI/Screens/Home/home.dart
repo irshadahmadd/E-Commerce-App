@@ -1,6 +1,6 @@
 import 'package:fashion_valley/Core/Providers/catagories_selection_provider.dart';
 import 'package:fashion_valley/UI/Custom_widgets/categories.dart';
-import 'package:fashion_valley/UI/Screens/AuthScreens/enterance_screent.dart';
+import 'package:fashion_valley/UI/Screens/auth_screens/enterance_screent.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
