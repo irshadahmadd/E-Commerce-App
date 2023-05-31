@@ -12,7 +12,7 @@ import '../../../../core/services/database_services.dart';
 import '../../../custom_widgets/custom_snacke_bar.dart';
 
 class SignInProvider extends BaseViewModal {
-  final _authService = locator<AuthServices>();
+  final _authService = AuthServices();
   AppUser appUser = AppUser();
   final databaseServices = DatabaseServices();
   CustomAuthResult customAuthResult = CustomAuthResult();

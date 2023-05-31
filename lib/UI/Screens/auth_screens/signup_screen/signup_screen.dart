@@ -18,19 +18,17 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
-    return Consumer<SignUpProvider>(builder: (context, model, child) {
-      return GestureDetector(
-        onTap: () {
-          FocusScope.of(context).requestFocus(FocusNode());
-        },
-        child: Scaffold(
+    return ChangeNotifierProvider(
+      create: (context) => SignUpProvider(),
+      child: Consumer<SignUpProvider>(builder: (context, model, child) {
+        return Scaffold(
           backgroundColor: Colors.white,
 
           ///
           ///   Body ==================>>>
           ///
           body: ModalProgressHUD(
-            progressIndicator: CircularProgressIndicator(
+            progressIndicator: const CircularProgressIndicator(
               color: Colors.white,
             ),
             inAsyncCall: model.state == ViewState.busy,
@@ -40,84 +38,77 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 50,
                     ),
                     Padding(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 16, horizontal: 20),
-                      child: Container(
-                        child: Center(
-                          child: Stack(
-                            children: [
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  SizedBox(
-                                    width: double.infinity,
-                                  ),
-                                  Stack(
-                                    alignment: Alignment.bottomRight,
-                                    children: [
-                                      Container(
-                                        child: CircleAvatar(
-                                          backgroundColor: Colors.white,
-                                          radius: 45,
-                                          backgroundImage: model.userImage !=
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 16, horizontal: 20),
+                      child: Center(
+                        child: Stack(
+                          children: [
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                const SizedBox(
+                                  width: double.infinity,
+                                ),
+                                Stack(
+                                  alignment: Alignment.bottomRight,
+                                  children: [
+                                    CircleAvatar(
+                                      backgroundColor: Colors.white,
+                                      radius: 45,
+                                      backgroundImage: model.userImage != null
+                                          ? FileImage(model.userImage!)
+                                          : model.locateUser.appUser
+                                                      .profileImage !=
                                                   null
-                                              ? FileImage(model.userImage!)
-                                              : model.locateUser.appUser
-                                                          .profileImage !=
-                                                      null
-                                                  ? NetworkImage(model
-                                                      .locateUser
-                                                      .appUser
-                                                      .profileImage!)
-                                                  : AssetImage(
-                                                          'assets/images/dp20.jpg')
-                                                      as ImageProvider,
+                                              ? NetworkImage(model.locateUser
+                                                  .appUser.profileImage!)
+                                              : const AssetImage(
+                                                      'assets/cloth1.jpg')
+                                                  as ImageProvider,
+                                    ),
+                                    Container(
+                                      // margin: EdgeInsets.only(right: 8, bottom: 28),
+                                      padding: const EdgeInsets.all(4),
+                                      decoration: const BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(30),
                                         ),
                                       ),
-                                      Container(
-                                        // margin: EdgeInsets.only(right: 8, bottom: 28),
-                                        padding: EdgeInsets.all(4),
-                                        decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius: BorderRadius.all(
-                                            Radius.circular(30),
-                                          ),
+                                      child: TextButton(
+                                        style: TextButton.styleFrom(
+                                          minimumSize: Size.zero,
+                                          padding: const EdgeInsets.only(),
+                                          tapTargetSize:
+                                              MaterialTapTargetSize.shrinkWrap,
                                         ),
-                                        child: TextButton(
-                                          style: TextButton.styleFrom(
-                                            minimumSize: Size.zero,
-                                            padding: EdgeInsets.only(),
-                                            tapTargetSize: MaterialTapTargetSize
-                                                .shrinkWrap,
-                                          ),
-                                          onPressed: () {
-                                            model.pickImageFromGallery();
-                                          },
-                                          child: Icon(
-                                            Icons.edit,
-                                            color: Colors.grey,
-                                            size: 22,
-                                          ),
+                                        onPressed: () {
+                                          model.pickImageFromGallery();
+                                        },
+                                        child: const Icon(
+                                          Icons.edit,
+                                          color: Colors.grey,
+                                          size: 22,
                                         ),
                                       ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 15),
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
                       child: Container(
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Colors.white,
                           boxShadow: [
                             BoxShadow(
@@ -136,11 +127,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                               vertical: 20, horizontal: 30),
                           child: Column(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                                 height: 12,
                               ),
 
@@ -158,7 +149,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   }
                                 },
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 12,
                               ),
 
@@ -179,7 +170,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   }
                                 },
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 12,
                               ),
 
@@ -197,7 +188,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   }
                                 },
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 12,
                               ),
 
@@ -215,7 +206,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   }
                                 },
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 12,
                               ),
 
@@ -230,11 +221,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     model.visiblePassword();
                                   },
                                   icon: model.isVisiblePassword
-                                      ? Icon(
+                                      ? const Icon(
                                           Icons.visibility_off,
                                           color: Color(0xFF568C48),
                                         )
-                                      : Icon(
+                                      : const Icon(
                                           Icons.visibility,
                                           color: Color(0xFF568C48),
                                         ),
@@ -251,7 +242,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   }
                                 },
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 12,
                               ),
 
@@ -266,11 +257,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     model.visiblePassword();
                                   },
                                   icon: model.isVisiblePassword
-                                      ? Icon(
+                                      ? const Icon(
                                           Icons.visibility_off,
                                           color: Color(0xFF568C48),
                                         )
-                                      : Icon(
+                                      : const Icon(
                                           Icons.visibility,
                                           color: Color(0xFF568C48),
                                         ),
@@ -285,7 +276,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                   }
                                 },
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 20,
                               ),
 
@@ -304,15 +295,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               ///
                               InkWell(
                                 onTap: () {
-                                  Get.off(
-                                    () => SignInScreen(),
-                                  );
+                                  Get.off(() => SignInScreen());
+                                  // Navigator.push(
+                                  //   context,
+                                  //   MaterialPageRoute(
+                                  //     builder: (context) =>
+                                  //         const SignInScreen(),
+                                  //   ),
+                                  // );
+                                  print("================Sign Up Done");
                                 },
                                 child: ListTile(
                                   contentPadding: EdgeInsets.zero,
                                   title: Center(
                                     child: RichText(
-                                      text: TextSpan(
+                                      text: const TextSpan(
                                         text: 'Already have an account?',
                                         style: TextStyle(
                                             color: Colors.grey, fontSize: 15),
@@ -339,8 +336,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
             ),
           ),
-        ),
-      );
-    });
+        );
+      }),
+    );
   }
 }

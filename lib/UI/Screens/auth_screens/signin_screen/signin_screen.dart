@@ -30,7 +30,7 @@ class _SignInScreenState extends State<SignInScreen> {
           ///   Body ===================>>>
           ///
           body: ModalProgressHUD(
-            progressIndicator: CircularProgressIndicator(
+            progressIndicator: const CircularProgressIndicator(
               color: Colors.white,
             ),
             inAsyncCall: model.state == ViewState.busy,
@@ -39,37 +39,41 @@ class _SignInScreenState extends State<SignInScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: 100,
+                    height: MediaQuery.of(context).size.height / 8,
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 16, horizontal: 20),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 16, horizontal: 20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           'Sign In',
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 25,
                               fontWeight: FontWeight.w500),
                         ),
                         SizedBox(
-                          height: 5,
+                          height: MediaQuery.of(context).size.height / 50,
                         ),
-                        Text(
+                        const Text(
                           'Welcome Back',
-                          style: TextStyle(color: Colors.white, fontSize: 16),
+                          style: TextStyle(color: Colors.black, fontSize: 16),
                         ),
                       ],
                     ),
                   ),
 
                   ///  Container ==========================>>>
-                  ///
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height / 18,
+                  ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    padding: EdgeInsets.symmetric(
+                        horizontal: MediaQuery.of(context).size.width / 13),
                     child: Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.white,
                         boxShadow: [
                           BoxShadow(
@@ -88,15 +92,15 @@ class _SignInScreenState extends State<SignInScreen> {
                         ),
                       ),
                       child: Padding(
-                        padding:
-                            EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 20, horizontal: 30),
                         child: Form(
                           key: model.formKey,
                           //autovalidateMode: AutovalidateMode.onUserInteraction,
                           child: Column(
                             children: [
                               SizedBox(
-                                height: 12,
+                                height: MediaQuery.of(context).size.height / 18,
                               ),
 
                               /// Email TextField =================>>>
@@ -118,7 +122,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                 },
                               ),
                               SizedBox(
-                                height: 12,
+                                height: MediaQuery.of(context).size.height / 18,
                               ),
 
                               /// Password TextField ================>>>
@@ -133,11 +137,11 @@ class _SignInScreenState extends State<SignInScreen> {
                                     model.visiblePassword();
                                   },
                                   icon: model.isVisiblePassword
-                                      ? Icon(
+                                      ? const Icon(
                                           Icons.visibility_off,
                                           color: Color(0xFF568C48),
                                         )
-                                      : Icon(
+                                      : const Icon(
                                           Icons.visibility,
                                           color: Color(0xFF568C48),
                                         ),
@@ -145,12 +149,17 @@ class _SignInScreenState extends State<SignInScreen> {
                                 onChanged: (value) {
                                   model.appUser.password = value;
                                 },
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return "Please enter your Password";
+                                  }
+                                  if (value.length < 6) {
+                                    return "Password length must be 6 characters";
+                                  }
+                                },
                               ),
                               SizedBox(
-                                height: 12,
-                              ),
-                              SizedBox(
-                                height: 20,
+                                height: MediaQuery.of(context).size.height / 18,
                               ),
 
                               ///
@@ -169,13 +178,19 @@ class _SignInScreenState extends State<SignInScreen> {
                               ///
                               InkWell(
                                 onTap: () {
-                                  Get.off(() => SignUpScreen());
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          const SignUpScreen(),
+                                    ),
+                                  );
                                 },
                                 child: ListTile(
                                   contentPadding: EdgeInsets.zero,
                                   title: Center(
                                     child: RichText(
-                                      text: TextSpan(
+                                      text: const TextSpan(
                                         text: 'Create an account?',
                                         style: TextStyle(
                                             color: Colors.grey, fontSize: 15),
@@ -191,7 +206,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                     ),
                                   ),
                                 ),
-                              )
+                              ),
                             ],
                           ),
                         ),

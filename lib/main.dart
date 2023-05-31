@@ -1,14 +1,12 @@
 import 'package:fashion_valley/Core/Providers/catagories_selection_provider.dart';
 import 'package:fashion_valley/Core/Services/splash_services.dart';
-import 'package:fashion_valley/Core/locator.dart';
 import 'package:fashion_valley/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_locales/flutter_locales.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:provider/provider.dart';
 
 import 'UI/Screens/auth_screens/signin_screen/signin_provider.dart';
-import 'UI/Screens/auth_screens/signup_screen/signup_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,11 +14,8 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  await setupLocator();
 
-  await Locales.init(
-    ['en', 'es'],
-  );
+  // GetIt.instance.registerSingleton<AuthServices>(AuthServices());
 
   runApp(const MyApp());
 }
@@ -36,12 +31,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<SignInProvider>(create: (_) => SignInProvider()),
         ChangeNotifierProvider<CatagorySelectionProvider>(
             create: (_) => CatagorySelectionProvider()),
-        ChangeNotifierProvider<SignInProvider>(
-          create: (_) => SignInProvider(),
-        ),
-        ChangeNotifierProvider<SignUpProvider>(create: (_) => SignUpProvider()),
       ],
-      child: MaterialApp(
+      child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Fashion Valley',
         theme: ThemeData(

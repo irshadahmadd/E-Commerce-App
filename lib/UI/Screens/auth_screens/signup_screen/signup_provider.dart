@@ -1,6 +1,5 @@
 import 'dart:io';
-import 'package:fashion_valley/Core/locator.dart';
-import 'package:fashion_valley/UI/Screens/auth_screens/enterance_screent.dart';
+import 'package:fashion_valley/UI/Screens/auth_screens/signin_screen/signin_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -13,8 +12,8 @@ import '../../../../core/services/database_storage_services.dart';
 import '../../../custom_widgets/custom_snacke_bar.dart';
 
 class SignUpProvider extends BaseViewModal {
-  final _authServices = locator<AuthServices>();
-  final locateUser = locator<AuthServices>();
+  final _authServices = AuthServices();
+  final locateUser = AuthServices();
   CustomAuthResult customAuthResult = CustomAuthResult();
   final formKey = GlobalKey<FormState>();
   AppUser appUser = AppUser();
@@ -26,6 +25,8 @@ class SignUpProvider extends BaseViewModal {
 
   final ImagePicker imagePicker = ImagePicker();
   DatabaseStorageServices databaseStorageServices = DatabaseStorageServices();
+
+  SignUpProvider();
 
   ///
   /// Visible Password =================================>>>
@@ -55,7 +56,7 @@ class SignUpProvider extends BaseViewModal {
     setState(ViewState.idle);
     if (customAuthResult.user != null) {
       print("SignUpUserId=> ${_authServices.appUser.appUserId}");
-      Get.off(() => EntranceScreen());
+      Get.off(() => SignInScreen());
     } else {
       showSnackBar(context, customAuthResult.errorMessage!);
     }
