@@ -1,7 +1,6 @@
 // ignore_for_file: avoid_print, non_constant_identifier_names, duplicate_ignore
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../locator.dart';
 import '../models/app_user.dart';
 import '../models/post_image_model.dart';
 import 'auth_Services.dart';

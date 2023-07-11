@@ -56,7 +56,7 @@ class SignUpProvider extends BaseViewModal {
     setState(ViewState.idle);
     if (customAuthResult.user != null) {
       print("SignUpUserId=> ${_authServices.appUser.appUserId}");
-      Get.off(() => SignInScreen());
+      Get.off(() => const SignInScreen());
     } else {
       showSnackBar(context, customAuthResult.errorMessage!);
     }
@@ -76,6 +76,7 @@ class SignUpProvider extends BaseViewModal {
                 userImage!, locateUser.appUser.appUserId.toString());
       }
 
+      // ignore: use_build_context_synchronously
       await signUpUser(appUser, context);
 
       setState(ViewState.idle);

@@ -1,4 +1,3 @@
-import 'package:fashion_valley/Core/locator.dart';
 import 'package:fashion_valley/UI/Screens/auth_screens/enterance_screent.dart';
 import 'package:fashion_valley/UI/Screens/auth_screens/signin_screen/signin_screen.dart';
 import 'package:flutter/material.dart';
@@ -46,6 +45,7 @@ class SignInProvider extends BaseViewModal {
 
       if (customAuthResult.user != null) {
         print("App user Id: ${_authService.appUser.appUserId}");
+        print("this is where i am searching===");
 
         if (_authService.appUser.isFirstLogin == true) {
           Get.off(() => EntranceScreen());
